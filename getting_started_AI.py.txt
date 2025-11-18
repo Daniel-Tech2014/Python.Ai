@@ -1,0 +1,15 @@
+import requests
+
+def get_random_joke():
+    """Fetch a random joke from the official Joke API,"""
+    url = "https://official-joke-api.appspot.com/random_joke"
+    response = requests.get(url)
+
+    if response.status_code == 200:
+         # one line to print the JSON response:
+         print(f"Full JSON Response:  {response.json()}")
+
+         joke_data = response.json()
+         return f "{joke_data['setup']} - {joke_data['punchline']}
+else:kpm
+return "Failed to retrieve joke."
